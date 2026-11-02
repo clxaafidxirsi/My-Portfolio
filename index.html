@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" data-theme="harbor">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdihafid Galaydh – Web designer</title>
+<meta name="description" content="Portfolio of Abdihafid Galaydh, a web designer who builds clear, fast websites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e6edf3; --ink:#15243b; --muted:#4b5b73; --line:#b9c6d4; --accent:#2c56f0; --on-accent:#fff;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+}
+:root[data-theme="night"]{ --bg:#0f1a2e; --ink:#e9eef7; --muted:#9db0cc; --line:#2a3b58; --accent:#7ea2ff; --on-accent:#0f1a2e; }
+:root[data-theme="sun"]{ --bg:#ffe9a8; --ink:#2b1b4d; --muted:#5d4a82; --line:#e2c76d; --accent:#6a2fd8; --on-accent:#fff; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.2rem/1.6 var(--body);transition:background .35s,color .35s}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;font-family:var(--display);font-weight:500}
+header nav{display:flex;gap:1.5rem}
+header a{text-decoration:none}
+header a:hover{text-decoration:underline;text-underline-offset:6px}
+.hero{padding:clamp(3rem,10vw,8rem) 0 clamp(3rem,7vw,6rem)}
+h1{font:800 clamp(2.8rem,9vw,7.5rem)/.95 var(--display);letter-spacing:-.04em;margin:0 0 2rem}
+.lead{max-width:34rem;font-size:1.45rem;line-height:1.5;margin:0 0 2.5rem}
+.palette{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;font-family:var(--display);font-size:1rem;color:var(--muted)}
+.palette button{font:500 1rem var(--display);display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:.4rem 1rem .4rem .5rem;cursor:pointer;transition:border-color .2s,background .2s}
+.palette button:hover{border-color:var(--ink)}
+.palette button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.dot{width:1.2rem;height:1.2rem;border-radius:50%;border:2px solid currentColor}
+.dot.harbor{background:#e6edf3}.dot.night{background:#0f1a2e}.dot.sun{background:#ffe9a8}
+section{padding:clamp(3rem,7vw,5.5rem) 0;border-top:2px solid var(--line)}
+h2{font:800 clamp(1.8rem,4vw,2.6rem)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 2rem}
+.project{display:grid;grid-template-columns:1.2fr 1.6fr .6fr;gap:1.5rem;align-items:baseline;padding:1.75rem 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .25s}
+.project:first-of-type{border-top:1px solid var(--line)}
+.project h3{font:800 clamp(1.6rem,3.5vw,2.4rem)/1.05 var(--display);letter-spacing:-.02em;margin:0}
+.project p{margin:0;color:var(--muted)}
+.project small{font:500 1rem var(--display);color:var(--muted);text-align:right}
+.project:hover{padding-left:1rem}
+.project:hover h3{color:var(--accent)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2.5rem}
+.cols h3{font:800 1.3rem var(--display);margin:0 0 .5rem}
+.cols p{margin:0;color:var(--muted)}
+.tools{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.75rem}
+.tools li{font:500 1.1rem var(--display);border:2px solid var(--line);border-radius:999px;padding:.35rem 1.1rem}
+.about{max-width:40rem}
+.about p{margin:0 0 1.25rem}
+.contact a.mail{display:inline-block;font:800 clamp(1.6rem,6vw,4rem)/1.1 var(--display);letter-spacing:-.03em;text-decoration-thickness:4px;text-underline-offset:8px;text-decoration-color:var(--accent);word-break:break-all}
+.contact a.mail:hover{color:var(--accent)}
+.contact .links{display:flex;gap:1.5rem;margin-top:1.5rem;font-family:var(--display);font-weight:500}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:1rem;border-top:2px solid var(--line)}
+@media (max-width:700px){
+  .project{grid-template-columns:1fr;gap:.5rem}
+  .project small{text-align:left}
+  body{font-size:1.1rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span>Abdihafid Galaydh</span>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#tools">Tools</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Abdihafid Galaydh</h1>
+      <p class="lead">I’m a web designer. I make clear, fast websites that help small businesses and creators look professional and get found.</p>
+      <div class="palette" role="group" aria-label="Choose a colour palette">
+        <span>Pick a palette:</span>
+        <button type="button" data-set="harbor" aria-pressed="true"><span class="dot harbor"></span>Harbor</button>
+        <button type="button" data-set="night" aria-pressed="false"><span class="dot night"></span>Night</button>
+        <button type="button" data-set="sun" aria-pressed="false"><span class="dot sun"></span>Sun</button>
+      </div>
+    </div>
+
+    <section id="work">
+      <h2>Selected work</h2>
+      <a class="project" href="#">
+        <h3>Las-Anod Recycling Industry</h3>
+        <p>A website that presents the company, what it recycles and how customers can reach it.</p>
+        <small>Company website</small>
+      </a>
+      <a class="project" href="#">
+        <h3>Shaqaale la kulan shaqaaleeyaha</h3>
+        <p>A platform that connects employees and employers, so people can find work and companies can find staff.</p>
+        <small>Jobs platform</small>
+      </a>
+      <a class="project" href="#">
+        <h3>Shaam Collection</h3>
+        <p>An online presence for a clothes shop, built to show the collection clearly and make ordering easy.</p>
+        <small>Clothes shop</small>
+      </a>
+    </section>
+
+    <section id="services">
+      <h2>What I can do for you</h2>
+      <div class="cols">
+        <div><h3>Website design</h3><p>Layouts, colours and typography that fit your brand and read well on every screen.</p></div>
+        <div><h3>Front-end build</h3><p>Clean HTML, CSS and JavaScript, so your site is fast and easy to update.</p></div>
+        <div><h3>Redesign</h3><p>I review your current site, fix what confuses visitors and keep what works.</p></div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <h2>Tools I work with</h2>
+      <ul class="tools">
+        <li>Figma</li><li>Adobe Photoshop</li><li>Adobe Illustrator</li><li>Canva</li><li>AI design tools</li>
+        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git and GitHub</li><li>VS Code</li><li>Responsive design</li>
+      </ul>
+    </section>
+
+    <section id="about">
+      <h2>About me</h2>
+      <div class="about">
+        <p>I’m Abdihafid Galaydh, a web designer. I like simple layouts, readable text and pages that open fast, even on a weak connection.</p>
+        <p>I work with clients locally and abroad. Tell me what you need, and I’ll reply with a plan and a price.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Start a project</h2>
+      <a class="mail" href="mailto:clxaafidxirsi@gmail.com">clxaafidxirsi@gmail.com</a>
+      <div class="links">
+        <a href="https://github.com/clxaafidxirsi">GitHub</a>
+        <a href="https://www.linkedin.com/in/clxaafid-xirsi-a7a691448/">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="yr">2026</span> Abdihafid Galaydh</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btns=document.querySelectorAll('.palette button');
+  function set(t){
+    root.setAttribute('data-theme',t);
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===t?'true':'false')});
+    try{localStorage.setItem('theme',t)}catch(e){}
+  }
+  var saved=null;
+  try{saved=localStorage.getItem('theme')}catch(e){}
+  if(saved==='harbor'||saved==='night'||saved==='sun')set(saved);
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
